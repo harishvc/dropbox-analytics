@@ -1,10 +1,6 @@
 #Dropbox Analytics
 Learn Dropbox API & perform basic analytics. Currently this project lists top 5 files by size and mime-type. This project ignores directories and hidden files while processing.
 
-##What to expect?
-When the project is deployed you 
-This project lists files are listed by size and type. Folders and hidden files are ignored.
-
 ##Get Started
 
 ###Register your dropbox app
@@ -12,8 +8,8 @@ Visit https://www.dropbox.com/developers/apps
 
 ###Configuration
 * Copy ```config/dboxconfig-copy.js``` as ```config/dboxconfig.js```
-* And add ```AppKey``` & ```AppSecret```
-* You can turn on the ```debug``` flag here & default ```port``` here
+* Add ```AppKey``` & ```AppSecret``` values
+* You can also turn on the ```debug``` flag & default ```port```
 ```
  port: 3000,
  environment: "development",
