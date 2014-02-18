@@ -1,0 +1,22 @@
+   <% layout('layout') -%>
+
+   <h1>Hello <%= output.name %></h1> 
+  
+   <h2>Top 5 files by size</h2>
+    <table>
+    <tr><th align="left">File Name</th><th>&nbsp;</th><th>Size</th></tr>
+    <% var result = JSON.parse(FileSize);
+       for (var i = 0; i < result.length; i++) { %>
+                 <tr><td><%= result[i][0] %></td><td>&nbsp;</td><td><%= result[i][1] %></tr> 
+               <% } %>
+    </table>          
+    
+    <h2>File Types</h2>
+     <table>
+    <tr><th align="left">File Type</th><th>&nbsp;</th><th>Count</th></tr>
+    <% var result = JSON.parse(FileTypes);
+       for (var i = 0; i < result.length; i++) { %>
+                 <tr><td><%= result[i][0] %></td><td>&nbsp;</td><td><%= result[i][1] %></tr> 
+               <% } %>
+    </table> 
+        
