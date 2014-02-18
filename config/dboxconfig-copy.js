@@ -1,6 +1,5 @@
 var dboxconfig = {
  port: 3000,
- DEBUG: true,
  environment: "development",
  logstatus: "false",
  loglevel: 1,
