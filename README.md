@@ -1,5 +1,5 @@
 #Dropbox Analytics
-Learn Dropbox API & perform basic analytics. Currently this project lists top 5 files by size and mime-type. This project ignores directories and hidden files while processing.
+Integrate with Dropbox API using ```node.js``` & perform basic analytics. Currently this project lists top 5 files (customizable) by size and mime-type. This project ignores directories and hidden files while processing.
 
 ##Get Started
 
@@ -9,7 +9,7 @@ Visit https://www.dropbox.com/developers/apps
 ###Configuration
 * Copy ```config/dboxconfig-copy.js``` as ```config/dboxconfig.js```
 * Add ```AppKey``` & ```AppSecret``` values
-* You can also turn on the ```debug``` flag & default ```port```
+* You can also turn on the ```debug``` flag & change the default ```port```
 ```
  port: 3000,
  environment: "development",
