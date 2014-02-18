@@ -1,4 +1,5 @@
 *DELETE*
 *sbin*
 *.metafile"
+.*
 config/dboxconfig.js
