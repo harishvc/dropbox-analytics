@@ -12,6 +12,7 @@
     "less-middleware": "~0.1.15",
     "numeral": "~1.5.3",
     "path": "~0.4.9",
+    "moment": "~2.1.0",
     "sliced": "~0.0.5"
   },
   "devDependencies": {},
