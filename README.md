@@ -29,13 +29,17 @@ Visit https://www.dropbox.com/developers/apps
 
 ### Screen Shots
 * Getting started
+
   http://harishvc.github.io/pics/dropbox-start.png
 
 * Terminal output (when debug is enabled)
+
   http://harishvc.github.io/pics/dropbox-console.png
 
 * Results
+
   http://harishvc.github.io/pics/dropbox-output.png
 
 * Metadata
+
   http://harishvc.github.io/pics/dropbox-metadata.png
