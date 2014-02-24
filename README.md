@@ -36,3 +36,6 @@ Visit https://www.dropbox.com/developers/apps
 
 * Results
   http://harishvc.github.io/pics/dropbox-output.png
+
+* Metadata
+  http://harishvc.github.io/pics/dropbox-metadata.png
