@@ -9,6 +9,7 @@ var crypto = require("crypto");
 var humanize = require("humanize");
 var numeral = require("numeral");
 var sliced = require("sliced");
+var moment = require("moment");
 var DBXServer = new Dropbox.AuthDriver.NodeServer(8191);
 var client = new Dropbox.Client({key: dboxconfig.Appkey,secret: dboxconfig.Appsecret});
 var LIMIT = 5;
@@ -16,6 +17,7 @@ var TotalFiles = 0;
 var FileTypes = [];
 var FileSize = [];
 var output = {};
+var StartTime ="";
 
 //Debug
 var DEBUG = dboxconfig.debug;
@@ -84,6 +86,18 @@ if (DEBUG) { console.log("Express3 running on %d in %s mode",dboxconfig.port,dbo
 /////////////////////////////////////////////
 // FUNCTIONS
 /////////////////////////////////////////////
+var  TN = function (when,format){
+    if ((when == "now") && (format == "valueof")){
+        return (moment().valueOf());
+    }
+    else if ((when == "now") && (format == "unix")){
+    	return (moment().unix());
+    }
+    else {
+    	console.log("Error");
+    }
+};
+
 
 function NextSteps (res,client) {
 	var entries = [];
@@ -96,6 +110,7 @@ function NextSteps (res,client) {
      if (DEBUG) {console.log("Name: ", output.name);}
      });
 	//Find all files
+	if (DEBUG) {StartTime = TN("now","unix"); console.log("Time Now:",StartTime);}
 	GetAllFiles(null,client,function(){DisplayInfo(res)});
 };
 
@@ -109,6 +124,18 @@ function GetAllFiles(metadata,client,callback){
         	if (DEBUG) { console.log ("Error: pullChanges"); }      
             return showError(error);  // Something went wrong.
         }
+        
+        
+        //What was returned back?
+        //if (DEBUG){
+        	//metadata.changes.forEach(function(entry) {
+            	//console.log("#### ");
+        		//for (var key in entry.stat) {
+        			//console.log(key,": ", entry.stat[key]);
+        		//};	
+        	//});
+        //}
+        
         //TODO: Handle files getting deleted while processing
         metadata.changes.forEach(function(file) {
         if ((file.stat.isFolder) || (/(^|.\/)\.+[^\/\.]/g).test(file.stat.path)) {
@@ -146,6 +173,7 @@ function GetAllFiles(metadata,client,callback){
 
 
 function DisplayInfo(res){
+	if (DEBUG) {EndTime = TN("now","unix"); console.log("Time Now:",EndTime); console.log("Processing Time:", EndTime-StartTime, "(seconds)");}
 	if (DEBUG) { console.log("### Total Files:", TotalFiles); }
 	//Sort file types
 	var SortedFileTypes = SortedKeys(FileTypes,"numbers");
