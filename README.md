@@ -43,3 +43,5 @@ Visit https://www.dropbox.com/developers/apps
 * Metadata
 
   http://harishvc.github.io/pics/dropbox-metadata.png
+
+[![Analytics](https://ga-beacon.appspot.com/UA-55381661-1/dropbox-analytics/readme)](https://github.com/igrigorik/ga-beacon)
